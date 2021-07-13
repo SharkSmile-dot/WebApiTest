@@ -177,17 +177,17 @@ namespace WebApiTest.contollers
              }
              for (int i = 0; i < control.Length; i++)
              {
-                cntl = db.Operations.Where(x => x.Contragent == control[i]).Sum(u => u.Value);
+                cntl = db.Operations.Where(x => x.Article == control[i]).Sum(u => u.Value);
                 sum1 = cntl + sum1;
-                cntl = db.Operations.Where(x => x.Contragent == control[i]).Where(c => c.Type == "Admission").Sum(u => u.Value);
+                cntl = db.Operations.Where(x => x.Article == control[i]).Where(c => c.Type == "Admission").Sum(u => u.Value);
                 sum2 = cntl + sum2;
-                cntl = db.Operations.Where(x => x.Contragent == control[i]).Where(c => c.Type == "Payout").Sum(u => u.Value);
+                cntl = db.Operations.Where(x => x.Article == control[i]).Where(c => c.Type == "Payout").Sum(u => u.Value);
                 sum3 = cntl + sum3;
-                cntl = db.Operations.Count(x => x.Contragent == control[i]);
+                cntl = db.Operations.Count(x => x.Article == control[i]);
                 count1 = cntl + count1;
-                cntl = db.Operations.Where(c => c.Type == "Admission").Count(x => x.Contragent == control[i]);
+                cntl = db.Operations.Where(c => c.Type == "Admission").Count(x => x.Article == control[i]);
                 count2 = cntl + count2;
-                cntl = db.Operations.Where(c => c.Type == "Payout").Count(x => x.Contragent == control[i]);
+                cntl = db.Operations.Where(c => c.Type == "Payout").Count(x => x.Article == control[i]);
                 count3 = cntl + count3;
             }
              db.Analytics.Add(new Analytics { SumALL = sum1, CountALL = count1, SumADMISSION = sum2, CountADMISSION = count2, SumPAYOUT = sum3, CountPAYOUT = count3 });
