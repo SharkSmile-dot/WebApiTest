@@ -6,7 +6,7 @@
 Для работы приложения, были добавлены пакеты EntityFrameworkCore.SqlServer, EntityFrameworkCore.Tools.
 Для подключения Swagger были добавлены пакеты Swashbuckle.AspNetCore, Swashbuckle.AspNetCore.Swagger, Swashbuckle.AspNetCore.SwaggerGen, Swashbuckle.AspNetCore.SwaggerUI.
 
-1. В классе Operations.cs содержаться основные и вспомогательные сущности
+1. В классе Operations.cs содержаться основные и вспомогательные сущности.
   Основные сущности были сделаны в соответсвии с требованиями.
   Так же для реализации фильтра дата конца, в сущность, которая хранит операции было добавлено поле End, оно обозначает дату окончания операции.
     Дополнительны сущности Analytics и Analytics1 хранят данные о аналитике, для 1 и 2 блока отдельно.
