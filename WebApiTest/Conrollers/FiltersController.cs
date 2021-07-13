@@ -134,10 +134,10 @@ namespace WebApiTest.contollers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult<IEnumerable<Operation>> Make1() {
             string[] check = { "CR_1","CR_2"};
-            oper = db.Operations.Where(x => x.Article == check[0]).ToList();
+            oper = db.Operations.Where(x => x.Contragent == check[0]).ToList();
             for (int i = 1; i < check.Length; i++)
             {
-                operf = db.Operations.Where(x => x.Article == check[i]).ToList();
+                operf = db.Operations.Where(x => x.Contragent == check[i]).ToList();
 
                 oper = oper.Concat(operf).ToList();
             }
