@@ -123,13 +123,13 @@ namespace WebApiTest.contollers
 
          }
          /// <summary>
-         /// Аналитика операций по статьям !О том как изменить массив статей читайте в README!
+         /// Аналитика операций по  массиву статей
          /// </summary>
          /// <response code="200" >Аналитика получена </response>
-         [HttpGet("/api/analytics/2/article")]
-         public async Task<List<Analytics>> Main()
+         [HttpPut("/api/analytics/2/article")]
+         public async Task<List<Analytics>> Main(string[] check)
          {
-             string[] check = { "AR_311", "AR_26", "AR_24" };
+             //string[] check = { "AR_311", "AR_26", "AR_24" };
              string[] control;
              string[] child;
              child = new string[150];
@@ -196,14 +196,14 @@ namespace WebApiTest.contollers
              return cnt;
          }
          /// <summary>
-         /// Выдает аналитику для операций по заранее созданному массиву контрагентов! о том как изменить массив читайте README!
+         /// Выдает аналитику для операций по массиву контрагентов
          /// </summary>
          ///<response code="200">Аналитика получена</response>
-         [HttpGet("/api/analytics/2/contragent/")]
+         [HttpPut("/api/analytics/2/contragent/")]
          [ProducesResponseType(StatusCodes.Status200OK)]
-         public async Task<List<Analytics>> Mainc()
+         public async Task<List<Analytics>> Mainc(string[] check)
          {
-             string[] check = { "CR_3205", "CR_4629" };
+             //string[] check = { "CR_3205", "CR_4629" };
 
              int sum1 = 0, cntl, sum2 = 0, sum3 = 0, count1 = 0, count2 = 0, count3 = 0;
              for (int i = 0; i < check.Length; i++)
@@ -228,14 +228,14 @@ namespace WebApiTest.contollers
              return cnt;
          }
         /// <summary>
-        /// Выдает аналитику для каждого контрагента по заранее созданному массиву контрагентов, для изменения массива откройте код.
+        /// Выдает аналитику для каждого контрагента по массиву контрагентов
         /// </summary>
         ///<response code="200">Аналитика получена</response>
-        [HttpGet("/api/analytics/1/contragent/")]
+        [HttpPut("/api/analytics/1/contragent/")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<List<Analytics1>> Main1()
+        public async Task<List<Analytics1>> Main1(string[] check)
         {
-            string[] check = { "CR_5001" };
+            //string[] check = { "CR_5001" };
             
             int sum1 = 0, sum2 = 0, sum3 = 0, count1 = 0, count2 = 0, count3 = 0;
             for (int i = 0; i < check.Length; i++)
