@@ -59,15 +59,15 @@ namespace WebApiTest.contollers
 
         }
         /// <summary>
-        /// Фильтр операций по заранее созданному массиву статей ! о том как изменить массив читайте README!
+        /// Фильтр операций по массиву статей 
         /// </summary>
         /// <response code="200" >Операции получены</response>
-        [HttpGet("/api/operations/articles")]
+        [HttpPut("/api/operations/articles")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<IEnumerable<Operation>> Make()
+        public ActionResult<IEnumerable<Operation>> Make(string[] check)
         {
 
-            string[] check = { "AR_311", "AR_27" };
+           // string[] check = { "AR_311", "AR_27" };
             string[] control;
             string[] child;
             child = new string[150];
@@ -127,13 +127,14 @@ namespace WebApiTest.contollers
             return oper;
         }
         /// <summary>
-        /// Фильтр операций по заранее созданному массиву контрагентов ! о том как изменить массив читайте README!
+        /// Фильтр операций по массиву контрагентов 
         /// </summary>
         /// <response code="200" >Операции найдены</response>
-        [HttpGet("/api/operations/contragents/")]
+        [HttpPut("/api/operations/contragents/")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<IEnumerable<Operation>> Make1() {
-            string[] check = { "CR_1","CR_2"};
+        public ActionResult<IEnumerable<Operation>> Make1(string[] check) 
+        {
+           // string[] check = { "CR_1","CR_2"};
             oper = db.Operations.Where(x => x.Contragent == check[0]).ToList();
             for (int i = 1; i < check.Length; i++)
             {
