@@ -32,11 +32,9 @@ namespace WebApiTest
                 {
                     Version = "v1",
                     Title = "WebTestAPI",
-                    Description = "Создано для тестового задания ПланФакт",
-                    TermsOfService = new Uri("https://planfact.io/"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Владимир Тимахов",
+                        Name = "Г‚Г«Г Г¤ГЁГ¬ГЁГ° Г’ГЁГ¬Г ГµГ®Гў",
                         Email = "vladimir.timahov@yandex.ru",
                         Url = new Uri("https://vk.com/sharkismile"),
                     },
